@@ -1,0 +1,843 @@
+
+atMega8_clock.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000004f4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000004  00800060  000004f4  00000588  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000b  00800064  00800064  0000058c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000058c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000005bc  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000b0  00000000  00000000  000005f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000934  00000000  00000000  000006a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000061a  00000000  00000000  00000fdc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000005c2  00000000  00000000  000015f6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000244  00000000  00000000  00001bb8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000479  00000000  00000000  00001dfc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000827  00000000  00000000  00002275  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000a0  00000000  00000000  00002a9c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1c c0       	rjmp	.+56     	; 0x3a <__ctors_end>
+   2:	18 c2       	rjmp	.+1072   	; 0x434 <__vector_1>
+   4:	21 c2       	rjmp	.+1090   	; 0x448 <__vector_2>
+   6:	34 c0       	rjmp	.+104    	; 0x70 <__bad_interrupt>
+   8:	33 c0       	rjmp	.+102    	; 0x70 <__bad_interrupt>
+   a:	32 c0       	rjmp	.+100    	; 0x70 <__bad_interrupt>
+   c:	9f c1       	rjmp	.+830    	; 0x34c <__vector_6>
+   e:	30 c0       	rjmp	.+96     	; 0x70 <__bad_interrupt>
+  10:	2f c0       	rjmp	.+94     	; 0x70 <__bad_interrupt>
+  12:	c5 c1       	rjmp	.+906    	; 0x39e <__vector_9>
+  14:	2d c0       	rjmp	.+90     	; 0x70 <__bad_interrupt>
+  16:	2c c0       	rjmp	.+88     	; 0x70 <__bad_interrupt>
+  18:	2b c0       	rjmp	.+86     	; 0x70 <__bad_interrupt>
+  1a:	2a c0       	rjmp	.+84     	; 0x70 <__bad_interrupt>
+  1c:	29 c0       	rjmp	.+82     	; 0x70 <__bad_interrupt>
+  1e:	28 c0       	rjmp	.+80     	; 0x70 <__bad_interrupt>
+  20:	27 c0       	rjmp	.+78     	; 0x70 <__bad_interrupt>
+  22:	26 c0       	rjmp	.+76     	; 0x70 <__bad_interrupt>
+  24:	25 c0       	rjmp	.+74     	; 0x70 <__bad_interrupt>
+  26:	b6 c0       	rjmp	.+364    	; 0x194 <setDigit+0xe>
+  28:	b9 c0       	rjmp	.+370    	; 0x19c <setDigit+0x16>
+  2a:	bc c0       	rjmp	.+376    	; 0x1a4 <setDigit+0x1e>
+  2c:	bf c0       	rjmp	.+382    	; 0x1ac <setDigit+0x26>
+  2e:	c2 c0       	rjmp	.+388    	; 0x1b4 <setDigit+0x2e>
+  30:	c5 c0       	rjmp	.+394    	; 0x1bc <setDigit+0x36>
+  32:	c8 c0       	rjmp	.+400    	; 0x1c4 <setDigit+0x3e>
+  34:	cb c0       	rjmp	.+406    	; 0x1cc <setDigit+0x46>
+  36:	ce c0       	rjmp	.+412    	; 0x1d4 <setDigit+0x4e>
+  38:	d0 c0       	rjmp	.+416    	; 0x1da <setDigit+0x54>
+
+0000003a <__ctors_end>:
+  3a:	11 24       	eor	r1, r1
+  3c:	1f be       	out	0x3f, r1	; 63
+  3e:	cf e5       	ldi	r28, 0x5F	; 95
+  40:	d4 e0       	ldi	r29, 0x04	; 4
+  42:	de bf       	out	0x3e, r29	; 62
+  44:	cd bf       	out	0x3d, r28	; 61
+
+00000046 <__do_copy_data>:
+  46:	10 e0       	ldi	r17, 0x00	; 0
+  48:	a0 e6       	ldi	r26, 0x60	; 96
+  4a:	b0 e0       	ldi	r27, 0x00	; 0
+  4c:	e4 ef       	ldi	r30, 0xF4	; 244
+  4e:	f4 e0       	ldi	r31, 0x04	; 4
+  50:	02 c0       	rjmp	.+4      	; 0x56 <__do_copy_data+0x10>
+  52:	05 90       	lpm	r0, Z+
+  54:	0d 92       	st	X+, r0
+  56:	a4 36       	cpi	r26, 0x64	; 100
+  58:	b1 07       	cpc	r27, r17
+  5a:	d9 f7       	brne	.-10     	; 0x52 <__do_copy_data+0xc>
+
+0000005c <__do_clear_bss>:
+  5c:	20 e0       	ldi	r18, 0x00	; 0
+  5e:	a4 e6       	ldi	r26, 0x64	; 100
+  60:	b0 e0       	ldi	r27, 0x00	; 0
+  62:	01 c0       	rjmp	.+2      	; 0x66 <.do_clear_bss_start>
+
+00000064 <.do_clear_bss_loop>:
+  64:	1d 92       	st	X+, r1
+
+00000066 <.do_clear_bss_start>:
+  66:	af 36       	cpi	r26, 0x6F	; 111
+  68:	b2 07       	cpc	r27, r18
+  6a:	e1 f7       	brne	.-8      	; 0x64 <.do_clear_bss_loop>
+  6c:	10 d2       	rcall	.+1056   	; 0x48e <main>
+  6e:	40 c2       	rjmp	.+1152   	; 0x4f0 <_exit>
+
+00000070 <__bad_interrupt>:
+  70:	c7 cf       	rjmp	.-114    	; 0x0 <__vectors>
+
+00000072 <extInteruptSettings>:
+}
+void extIntINT0Disable(){ //External Interrupt Request 0 Disable
+	GICR &= ~(1<<INT0);
+}
+void extIntINT1Disable(){ //External Interrupt Request 1 Disable
+	GICR &= ~(1<<INT1);
+  72:	8a 98       	cbi	0x11, 2	; 17
+  74:	8b 98       	cbi	0x11, 3	; 17
+  76:	82 b3       	in	r24, 0x12	; 18
+  78:	8c 60       	ori	r24, 0x0C	; 12
+  7a:	82 bb       	out	0x12, r24	; 18
+  7c:	85 b7       	in	r24, 0x35	; 53
+  7e:	8a 60       	ori	r24, 0x0A	; 10
+  80:	85 bf       	out	0x35, r24	; 53
+  82:	08 95       	ret
+
+00000084 <extIntINT1Enable>:
+  84:	8b b7       	in	r24, 0x3b	; 59
+  86:	80 68       	ori	r24, 0x80	; 128
+  88:	8b bf       	out	0x3b, r24	; 59
+  8a:	08 95       	ret
+
+0000008c <counterSettings>:
+}
+void counterSettings(void){
+	// 16-bit Timer/Counter1
+	TCCR1B = TCCR1B | 0xE; //mask: 1110 16bit counter to external source is set (T1)PD5
+  8c:	8e b5       	in	r24, 0x2e	; 46
+  8e:	8e 60       	ori	r24, 0x0E	; 14
+  90:	8e bd       	out	0x2e, r24	; 46
+	TCCR1A = TCCR1A | 0b100;  // 00 Waveform Gen Mode
+  92:	8f b5       	in	r24, 0x2f	; 47
+  94:	84 60       	ori	r24, 0x04	; 4
+  96:	8f bd       	out	0x2f, r24	; 47
+	OCR1A = 32767; //Compare Reg Value for timer  In dec. it is 32767
+  98:	8f ef       	ldi	r24, 0xFF	; 255
+  9a:	9f e7       	ldi	r25, 0x7F	; 127
+  9c:	9b bd       	out	0x2b, r25	; 43
+  9e:	8a bd       	out	0x2a, r24	; 42
+	// counter 8-bit Timer/Counter0
+	TCCR0 = 0b11; //cl/O/64 prescaler Timer/Counter0 Control Register
+  a0:	83 e0       	ldi	r24, 0x03	; 3
+  a2:	83 bf       	out	0x33, r24	; 51
+	TIMSK |= (1<<TOIE0); //Timer/Counter0 Overflow Interrupt Enable (TOIE0 set to 1)
+  a4:	89 b7       	in	r24, 0x39	; 57
+  a6:	81 60       	ori	r24, 0x01	; 1
+  a8:	89 bf       	out	0x39, r24	; 57
+  aa:	08 95       	ret
+
+000000ac <timer1IntEnable>:
+}
+void timer1IntEnable(){
+	TIMSK |= 0x10; //Timer/Counter1, Output Compare A Match Interrupt Enable
+  ac:	89 b7       	in	r24, 0x39	; 57
+  ae:	80 61       	ori	r24, 0x10	; 16
+  b0:	89 bf       	out	0x39, r24	; 57
+  b2:	08 95       	ret
+
+000000b4 <timer1IntDisable>:
+}
+void timer1IntDisable(){
+	TIMSK &= ~(1<<OCIE1A); //Timer/Counter1, Output Compare A Match Interrupt Disable
+  b4:	89 b7       	in	r24, 0x39	; 57
+  b6:	8f 7e       	andi	r24, 0xEF	; 239
+  b8:	89 bf       	out	0x39, r24	; 57
+  ba:	08 95       	ret
+
+000000bc <ledPortSEtting>:
+}
+void ledPortSEtting(){
+	DDRD |= 0b11000000;
+  bc:	81 b3       	in	r24, 0x11	; 17
+  be:	80 6c       	ori	r24, 0xC0	; 192
+  c0:	81 bb       	out	0x11, r24	; 17
+	PORTD |= 0b11000000;
+  c2:	82 b3       	in	r24, 0x12	; 18
+  c4:	80 6c       	ori	r24, 0xC0	; 192
+  c6:	82 bb       	out	0x12, r24	; 18
+	DDRB = 0xFF;
+  c8:	8f ef       	ldi	r24, 0xFF	; 255
+  ca:	87 bb       	out	0x17, r24	; 23
+	PORTB = 0xFF;
+  cc:	88 bb       	out	0x18, r24	; 24
+	DDRC = 0xFF;
+  ce:	84 bb       	out	0x14, r24	; 20
+	PORTC = 0xFF;
+  d0:	85 bb       	out	0x15, r24	; 21
+  d2:	08 95       	ret
+
+000000d4 <setNewTime>:
+}
+// Set time function
+void setNewTime(void){
+  d4:	8e e1       	ldi	r24, 0x1E	; 30
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  d8:	2f e7       	ldi	r18, 0x7F	; 127
+  da:	38 e3       	ldi	r19, 0x38	; 56
+  dc:	41 e0       	ldi	r20, 0x01	; 1
+  de:	21 50       	subi	r18, 0x01	; 1
+  e0:	30 40       	sbci	r19, 0x00	; 0
+  e2:	40 40       	sbci	r20, 0x00	; 0
+  e4:	e1 f7       	brne	.-8      	; 0xde <setNewTime+0xa>
+  e6:	00 c0       	rjmp	.+0      	; 0xe8 <setNewTime+0x14>
+  e8:	00 00       	nop
+	int count;
+	for(count = 0; count<30; count++){ // проверка времени удержания кнопки настройки времени
+		_delay_ms(50);
+		if(!(PIND & (1<<PD2)))continue;
+  ea:	82 99       	sbic	0x10, 2	; 16
+  ec:	02 c0       	rjmp	.+4      	; 0xf2 <setNewTime+0x1e>
+  ee:	01 97       	sbiw	r24, 0x01	; 1
+	PORTC = 0xFF;
+}
+// Set time function
+void setNewTime(void){
+	int count;
+	for(count = 0; count<30; count++){ // проверка времени удержания кнопки настройки времени
+  f0:	99 f7       	brne	.-26     	; 0xd8 <setNewTime+0x4>
+		_delay_ms(50);
+		if(!(PIND & (1<<PD2)))continue;
+		else break;
+	}
+	if(!(PIND & (1<<PD2))){ // если кнопка нажата - начать програму установки
+  f2:	82 99       	sbic	0x10, 2	; 16
+  f4:	1b c0       	rjmp	.+54     	; 0x12c <setNewTime+0x58>
+		secondsForSet = seconds;
+  f6:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <seconds>
+  fa:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <seconds+0x1>
+  fe:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <secondsForSet+0x1>
+ 102:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <secondsForSet>
+		minutesForSet = minutes;
+ 106:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <minutes>
+ 10a:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <minutes+0x1>
+ 10e:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <minutesForSet+0x1>
+ 112:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <minutesForSet>
+		hoursForSet = hours;
+ 116:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <hours>
+ 11a:	90 91 6a 00 	lds	r25, 0x006A	; 0x80006a <hours+0x1>
+ 11e:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 122:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+		settingTimeFlag = 1;
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <__data_end>
+ 12c:	08 95       	ret
+
+0000012e <uptClockVars>:
+		} 
+}
+// main program user functions
+void uptClockVars(int *seconds, int *minutes, int *hours){
+ 12e:	fc 01       	movw	r30, r24
+	LED_POINT(); // toggle led double point
+ 130:	82 b3       	in	r24, 0x12	; 18
+ 132:	90 e4       	ldi	r25, 0x40	; 64
+ 134:	98 27       	eor	r25, r24
+ 136:	92 bb       	out	0x12, r25	; 18
+	*seconds = *seconds + 1;
+ 138:	20 81       	ld	r18, Z
+ 13a:	31 81       	ldd	r19, Z+1	; 0x01
+ 13c:	2f 5f       	subi	r18, 0xFF	; 255
+ 13e:	3f 4f       	sbci	r19, 0xFF	; 255
+	if(*seconds == 60){*seconds = 0; *minutes = *minutes + 1;}
+ 140:	2c 33       	cpi	r18, 0x3C	; 60
+ 142:	31 05       	cpc	r19, r1
+ 144:	19 f0       	breq	.+6      	; 0x14c <uptClockVars+0x1e>
+		} 
+}
+// main program user functions
+void uptClockVars(int *seconds, int *minutes, int *hours){
+	LED_POINT(); // toggle led double point
+	*seconds = *seconds + 1;
+ 146:	31 83       	std	Z+1, r19	; 0x01
+ 148:	20 83       	st	Z, r18
+ 14a:	08 c0       	rjmp	.+16     	; 0x15c <uptClockVars+0x2e>
+	if(*seconds == 60){*seconds = 0; *minutes = *minutes + 1;}
+ 14c:	11 82       	std	Z+1, r1	; 0x01
+ 14e:	10 82       	st	Z, r1
+ 150:	fb 01       	movw	r30, r22
+ 152:	80 81       	ld	r24, Z
+ 154:	91 81       	ldd	r25, Z+1	; 0x01
+ 156:	01 96       	adiw	r24, 0x01	; 1
+ 158:	91 83       	std	Z+1, r25	; 0x01
+ 15a:	80 83       	st	Z, r24
+	if(*minutes == 60){*minutes = 0; *hours = *hours + 1;}
+ 15c:	fb 01       	movw	r30, r22
+ 15e:	80 81       	ld	r24, Z
+ 160:	91 81       	ldd	r25, Z+1	; 0x01
+ 162:	cc 97       	sbiw	r24, 0x3c	; 60
+ 164:	41 f4       	brne	.+16     	; 0x176 <uptClockVars+0x48>
+ 166:	11 82       	std	Z+1, r1	; 0x01
+ 168:	10 82       	st	Z, r1
+ 16a:	fa 01       	movw	r30, r20
+ 16c:	80 81       	ld	r24, Z
+ 16e:	91 81       	ldd	r25, Z+1	; 0x01
+ 170:	01 96       	adiw	r24, 0x01	; 1
+ 172:	91 83       	std	Z+1, r25	; 0x01
+ 174:	80 83       	st	Z, r24
+	if(*hours == 24)*hours = 0; 		
+ 176:	fa 01       	movw	r30, r20
+ 178:	80 81       	ld	r24, Z
+ 17a:	91 81       	ldd	r25, Z+1	; 0x01
+ 17c:	48 97       	sbiw	r24, 0x18	; 24
+ 17e:	11 f4       	brne	.+4      	; 0x184 <uptClockVars+0x56>
+ 180:	11 82       	std	Z+1, r1	; 0x01
+ 182:	10 82       	st	Z, r1
+ 184:	08 95       	ret
+
+00000186 <setDigit>:
+}
+void setDigit(int digit){ //записать значение аргумента в 7 сег. индикатор
+	switch(digit){
+ 186:	8a 30       	cpi	r24, 0x0A	; 10
+ 188:	91 05       	cpc	r25, r1
+ 18a:	50 f5       	brcc	.+84     	; 0x1e0 <setDigit+0x5a>
+ 18c:	fc 01       	movw	r30, r24
+ 18e:	ed 5e       	subi	r30, 0xED	; 237
+ 190:	ff 4f       	sbci	r31, 0xFF	; 255
+ 192:	09 94       	ijmp
+		case 0: LED_SET(CHAR_0); break;
+ 194:	80 e2       	ldi	r24, 0x20	; 32
+ 196:	88 bb       	out	0x18, r24	; 24
+ 198:	97 98       	cbi	0x12, 7	; 18
+ 19a:	08 95       	ret
+		case 1: LED_SET(CHAR_1); break;
+ 19c:	8c e3       	ldi	r24, 0x3C	; 60
+ 19e:	88 bb       	out	0x18, r24	; 24
+ 1a0:	97 9a       	sbi	0x12, 7	; 18
+ 1a2:	08 95       	ret
+		case 2: LED_SET(CHAR_2); break;
+ 1a4:	82 e1       	ldi	r24, 0x12	; 18
+ 1a6:	88 bb       	out	0x18, r24	; 24
+ 1a8:	97 98       	cbi	0x12, 7	; 18
+ 1aa:	08 95       	ret
+		case 3: LED_SET(CHAR_3); break;
+ 1ac:	88 e1       	ldi	r24, 0x18	; 24
+ 1ae:	88 bb       	out	0x18, r24	; 24
+ 1b0:	97 98       	cbi	0x12, 7	; 18
+ 1b2:	08 95       	ret
+		case 4: LED_SET(CHAR_4); break;
+ 1b4:	8c e0       	ldi	r24, 0x0C	; 12
+ 1b6:	88 bb       	out	0x18, r24	; 24
+ 1b8:	97 9a       	sbi	0x12, 7	; 18
+ 1ba:	08 95       	ret
+		case 5: LED_SET(CHAR_5); break;
+ 1bc:	89 e0       	ldi	r24, 0x09	; 9
+ 1be:	88 bb       	out	0x18, r24	; 24
+ 1c0:	97 98       	cbi	0x12, 7	; 18
+ 1c2:	08 95       	ret
+		case 6: LED_SET(CHAR_6); break;
+ 1c4:	81 e0       	ldi	r24, 0x01	; 1
+ 1c6:	88 bb       	out	0x18, r24	; 24
+ 1c8:	97 98       	cbi	0x12, 7	; 18
+ 1ca:	08 95       	ret
+		case 7: LED_SET(CHAR_7); break;  
+ 1cc:	8c e3       	ldi	r24, 0x3C	; 60
+ 1ce:	88 bb       	out	0x18, r24	; 24
+ 1d0:	97 98       	cbi	0x12, 7	; 18
+ 1d2:	08 95       	ret
+		case 8: LED_SET(CHAR_8); break;
+ 1d4:	18 ba       	out	0x18, r1	; 24
+ 1d6:	97 98       	cbi	0x12, 7	; 18
+ 1d8:	08 95       	ret
+		case 9: LED_SET(CHAR_9); break;
+ 1da:	88 e0       	ldi	r24, 0x08	; 8
+ 1dc:	88 bb       	out	0x18, r24	; 24
+ 1de:	97 98       	cbi	0x12, 7	; 18
+ 1e0:	08 95       	ret
+
+000001e2 <getLedValue>:
+	}
+}
+int getLedValue(int uniVal, char settingTimeFlag){
+	if(!settingTimeFlag){
+ 1e2:	61 11       	cpse	r22, r1
+ 1e4:	45 c0       	rjmp	.+138    	; 0x270 <getLedValue+0x8e>
+		switch(uniVal){
+ 1e6:	82 30       	cpi	r24, 0x02	; 2
+ 1e8:	91 05       	cpc	r25, r1
+ 1ea:	01 f1       	breq	.+64     	; 0x22c <getLedValue+0x4a>
+ 1ec:	34 f4       	brge	.+12     	; 0x1fa <getLedValue+0x18>
+ 1ee:	00 97       	sbiw	r24, 0x00	; 0
+ 1f0:	61 f0       	breq	.+24     	; 0x20a <getLedValue+0x28>
+ 1f2:	81 30       	cpi	r24, 0x01	; 1
+ 1f4:	91 05       	cpc	r25, r1
+ 1f6:	89 f0       	breq	.+34     	; 0x21a <getLedValue+0x38>
+ 1f8:	08 95       	ret
+ 1fa:	84 30       	cpi	r24, 0x04	; 4
+ 1fc:	91 05       	cpc	r25, r1
+ 1fe:	39 f1       	breq	.+78     	; 0x24e <getLedValue+0x6c>
+ 200:	ec f0       	brlt	.+58     	; 0x23c <getLedValue+0x5a>
+ 202:	85 30       	cpi	r24, 0x05	; 5
+ 204:	91 05       	cpc	r25, r1
+ 206:	59 f1       	breq	.+86     	; 0x25e <getLedValue+0x7c>
+ 208:	08 95       	ret
+			case 0: uniVal = seconds%10; break;
+ 20a:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <seconds>
+ 20e:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <seconds+0x1>
+ 212:	6a e0       	ldi	r22, 0x0A	; 10
+ 214:	70 e0       	ldi	r23, 0x00	; 0
+ 216:	45 d1       	rcall	.+650    	; 0x4a2 <__divmodhi4>
+ 218:	08 95       	ret
+			case 1: uniVal = seconds/10; break;
+ 21a:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <seconds>
+ 21e:	90 91 6e 00 	lds	r25, 0x006E	; 0x80006e <seconds+0x1>
+ 222:	6a e0       	ldi	r22, 0x0A	; 10
+ 224:	70 e0       	ldi	r23, 0x00	; 0
+ 226:	3d d1       	rcall	.+634    	; 0x4a2 <__divmodhi4>
+ 228:	cb 01       	movw	r24, r22
+ 22a:	08 95       	ret
+			case 2: uniVal = minutes%10; break;
+ 22c:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <minutes>
+ 230:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <minutes+0x1>
+ 234:	6a e0       	ldi	r22, 0x0A	; 10
+ 236:	70 e0       	ldi	r23, 0x00	; 0
+ 238:	34 d1       	rcall	.+616    	; 0x4a2 <__divmodhi4>
+ 23a:	08 95       	ret
+			case 3: uniVal = minutes/10; break;
+ 23c:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <minutes>
+ 240:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <minutes+0x1>
+ 244:	6a e0       	ldi	r22, 0x0A	; 10
+ 246:	70 e0       	ldi	r23, 0x00	; 0
+ 248:	2c d1       	rcall	.+600    	; 0x4a2 <__divmodhi4>
+ 24a:	cb 01       	movw	r24, r22
+ 24c:	08 95       	ret
+			case 4: uniVal = hours%10; break;
+ 24e:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <hours>
+ 252:	90 91 6a 00 	lds	r25, 0x006A	; 0x80006a <hours+0x1>
+ 256:	6a e0       	ldi	r22, 0x0A	; 10
+ 258:	70 e0       	ldi	r23, 0x00	; 0
+ 25a:	23 d1       	rcall	.+582    	; 0x4a2 <__divmodhi4>
+ 25c:	08 95       	ret
+			case 5: uniVal = hours/10; break;
+ 25e:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <hours>
+ 262:	90 91 6a 00 	lds	r25, 0x006A	; 0x80006a <hours+0x1>
+ 266:	6a e0       	ldi	r22, 0x0A	; 10
+ 268:	70 e0       	ldi	r23, 0x00	; 0
+ 26a:	1b d1       	rcall	.+566    	; 0x4a2 <__divmodhi4>
+ 26c:	cb 01       	movw	r24, r22
+ 26e:	08 95       	ret
+		}
+	}
+	else{
+		switch(uniVal){
+ 270:	82 30       	cpi	r24, 0x02	; 2
+ 272:	91 05       	cpc	r25, r1
+ 274:	01 f1       	breq	.+64     	; 0x2b6 <getLedValue+0xd4>
+ 276:	34 f4       	brge	.+12     	; 0x284 <getLedValue+0xa2>
+ 278:	00 97       	sbiw	r24, 0x00	; 0
+ 27a:	61 f0       	breq	.+24     	; 0x294 <getLedValue+0xb2>
+ 27c:	81 30       	cpi	r24, 0x01	; 1
+ 27e:	91 05       	cpc	r25, r1
+ 280:	89 f0       	breq	.+34     	; 0x2a4 <getLedValue+0xc2>
+ 282:	08 95       	ret
+ 284:	84 30       	cpi	r24, 0x04	; 4
+ 286:	91 05       	cpc	r25, r1
+ 288:	39 f1       	breq	.+78     	; 0x2d8 <getLedValue+0xf6>
+ 28a:	ec f0       	brlt	.+58     	; 0x2c6 <getLedValue+0xe4>
+ 28c:	85 30       	cpi	r24, 0x05	; 5
+ 28e:	91 05       	cpc	r25, r1
+ 290:	59 f1       	breq	.+86     	; 0x2e8 <getLedValue+0x106>
+ 292:	08 95       	ret
+			case 0: uniVal = secondsForSet%10; break;
+ 294:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <secondsForSet>
+ 298:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <secondsForSet+0x1>
+ 29c:	6a e0       	ldi	r22, 0x0A	; 10
+ 29e:	70 e0       	ldi	r23, 0x00	; 0
+ 2a0:	00 d1       	rcall	.+512    	; 0x4a2 <__divmodhi4>
+ 2a2:	08 95       	ret
+			case 1: uniVal = secondsForSet/10; break;
+ 2a4:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <secondsForSet>
+ 2a8:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <secondsForSet+0x1>
+ 2ac:	6a e0       	ldi	r22, 0x0A	; 10
+ 2ae:	70 e0       	ldi	r23, 0x00	; 0
+ 2b0:	f8 d0       	rcall	.+496    	; 0x4a2 <__divmodhi4>
+ 2b2:	cb 01       	movw	r24, r22
+ 2b4:	08 95       	ret
+			case 2: uniVal = minutesForSet%10; break;
+ 2b6:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <minutesForSet>
+ 2ba:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <minutesForSet+0x1>
+ 2be:	6a e0       	ldi	r22, 0x0A	; 10
+ 2c0:	70 e0       	ldi	r23, 0x00	; 0
+ 2c2:	ef d0       	rcall	.+478    	; 0x4a2 <__divmodhi4>
+ 2c4:	08 95       	ret
+			case 3: uniVal = minutesForSet/10; break;
+ 2c6:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <minutesForSet>
+ 2ca:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <minutesForSet+0x1>
+ 2ce:	6a e0       	ldi	r22, 0x0A	; 10
+ 2d0:	70 e0       	ldi	r23, 0x00	; 0
+ 2d2:	e7 d0       	rcall	.+462    	; 0x4a2 <__divmodhi4>
+ 2d4:	cb 01       	movw	r24, r22
+ 2d6:	08 95       	ret
+			case 4: uniVal = hoursForSet%10; break;
+ 2d8:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 2dc:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 2e0:	6a e0       	ldi	r22, 0x0A	; 10
+ 2e2:	70 e0       	ldi	r23, 0x00	; 0
+ 2e4:	de d0       	rcall	.+444    	; 0x4a2 <__divmodhi4>
+ 2e6:	08 95       	ret
+			case 5: uniVal = hoursForSet/10; break;
+ 2e8:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 2ec:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 2f0:	6a e0       	ldi	r22, 0x0A	; 10
+ 2f2:	70 e0       	ldi	r23, 0x00	; 0
+ 2f4:	d6 d0       	rcall	.+428    	; 0x4a2 <__divmodhi4>
+ 2f6:	cb 01       	movw	r24, r22
+		}	
+	}
+	return uniVal;
+}
+ 2f8:	08 95       	ret
+
+000002fa <switchDigit>:
+void switchDigit(int *ledNum, int *ledValue){ //установка значений на дисплее
+ 2fa:	cf 93       	push	r28
+ 2fc:	df 93       	push	r29
+ 2fe:	ec 01       	movw	r28, r24
+	PORTC = 0xFF; // отключить отображение всех разрядов 7 сег. индикаторов
+ 300:	8f ef       	ldi	r24, 0xFF	; 255
+ 302:	85 bb       	out	0x15, r24	; 21
+	setDigit(*ledValue); // установить значение порта для вывода на индикаторе 
+ 304:	fb 01       	movw	r30, r22
+ 306:	80 81       	ld	r24, Z
+ 308:	91 81       	ldd	r25, Z+1	; 0x01
+ 30a:	3d df       	rcall	.-390    	; 0x186 <setDigit>
+	switch(*ledNum){ // выбрать регистр индикатора, в котором будет отображаться значение до следующего прерывания
+ 30c:	88 81       	ld	r24, Y
+ 30e:	99 81       	ldd	r25, Y+1	; 0x01
+ 310:	82 30       	cpi	r24, 0x02	; 2
+ 312:	91 05       	cpc	r25, r1
+ 314:	89 f0       	breq	.+34     	; 0x338 <switchDigit+0x3e>
+ 316:	2c f4       	brge	.+10     	; 0x322 <switchDigit+0x28>
+ 318:	00 97       	sbiw	r24, 0x00	; 0
+ 31a:	51 f0       	breq	.+20     	; 0x330 <switchDigit+0x36>
+ 31c:	01 97       	sbiw	r24, 0x01	; 1
+ 31e:	51 f0       	breq	.+20     	; 0x334 <switchDigit+0x3a>
+ 320:	12 c0       	rjmp	.+36     	; 0x346 <switchDigit+0x4c>
+ 322:	84 30       	cpi	r24, 0x04	; 4
+ 324:	91 05       	cpc	r25, r1
+ 326:	61 f0       	breq	.+24     	; 0x340 <switchDigit+0x46>
+ 328:	4c f0       	brlt	.+18     	; 0x33c <switchDigit+0x42>
+ 32a:	05 97       	sbiw	r24, 0x05	; 5
+ 32c:	59 f0       	breq	.+22     	; 0x344 <switchDigit+0x4a>
+ 32e:	0b c0       	rjmp	.+22     	; 0x346 <switchDigit+0x4c>
+		case PC0: PORTC&=~(1<<PC0); break; 
+ 330:	a8 98       	cbi	0x15, 0	; 21
+ 332:	09 c0       	rjmp	.+18     	; 0x346 <switchDigit+0x4c>
+		case PC1: PORTC&=~(1<<PC1); break;
+ 334:	a9 98       	cbi	0x15, 1	; 21
+ 336:	07 c0       	rjmp	.+14     	; 0x346 <switchDigit+0x4c>
+		case PC2: PORTC&=~(1<<PC2); break;
+ 338:	aa 98       	cbi	0x15, 2	; 21
+ 33a:	05 c0       	rjmp	.+10     	; 0x346 <switchDigit+0x4c>
+		case PC3: PORTC&=~(1<<PC3); break;
+ 33c:	ab 98       	cbi	0x15, 3	; 21
+ 33e:	03 c0       	rjmp	.+6      	; 0x346 <switchDigit+0x4c>
+		case PC4: PORTC&=~(1<<PC4); break;
+ 340:	ac 98       	cbi	0x15, 4	; 21
+ 342:	01 c0       	rjmp	.+2      	; 0x346 <switchDigit+0x4c>
+		case PC5: PORTC&=~(1<<PC5); break;
+ 344:	ad 98       	cbi	0x15, 5	; 21
+	}
+}
+ 346:	df 91       	pop	r29
+ 348:	cf 91       	pop	r28
+ 34a:	08 95       	ret
+
+0000034c <__vector_6>:
+//global interrupt functions
+ISR(TIMER1_COMPA_vect){
+ 34c:	1f 92       	push	r1
+ 34e:	0f 92       	push	r0
+ 350:	0f b6       	in	r0, 0x3f	; 63
+ 352:	0f 92       	push	r0
+ 354:	11 24       	eor	r1, r1
+ 356:	2f 93       	push	r18
+ 358:	3f 93       	push	r19
+ 35a:	4f 93       	push	r20
+ 35c:	5f 93       	push	r21
+ 35e:	6f 93       	push	r22
+ 360:	7f 93       	push	r23
+ 362:	8f 93       	push	r24
+ 364:	9f 93       	push	r25
+ 366:	af 93       	push	r26
+ 368:	bf 93       	push	r27
+ 36a:	ef 93       	push	r30
+ 36c:	ff 93       	push	r31
+	uptClockVars(&seconds, &minutes, &hours); //перевод стрелок
+ 36e:	49 e6       	ldi	r20, 0x69	; 105
+ 370:	50 e0       	ldi	r21, 0x00	; 0
+ 372:	6b e6       	ldi	r22, 0x6B	; 107
+ 374:	70 e0       	ldi	r23, 0x00	; 0
+ 376:	8d e6       	ldi	r24, 0x6D	; 109
+ 378:	90 e0       	ldi	r25, 0x00	; 0
+ 37a:	d9 de       	rcall	.-590    	; 0x12e <uptClockVars>
+}
+ 37c:	ff 91       	pop	r31
+ 37e:	ef 91       	pop	r30
+ 380:	bf 91       	pop	r27
+ 382:	af 91       	pop	r26
+ 384:	9f 91       	pop	r25
+ 386:	8f 91       	pop	r24
+ 388:	7f 91       	pop	r23
+ 38a:	6f 91       	pop	r22
+ 38c:	5f 91       	pop	r21
+ 38e:	4f 91       	pop	r20
+ 390:	3f 91       	pop	r19
+ 392:	2f 91       	pop	r18
+ 394:	0f 90       	pop	r0
+ 396:	0f be       	out	0x3f, r0	; 63
+ 398:	0f 90       	pop	r0
+ 39a:	1f 90       	pop	r1
+ 39c:	18 95       	reti
+
+0000039e <__vector_9>:
+ISR(TIMER0_OVF_vect){ // прерывание по смене отображаемого регистра и установка значения в него
+ 39e:	1f 92       	push	r1
+ 3a0:	0f 92       	push	r0
+ 3a2:	0f b6       	in	r0, 0x3f	; 63
+ 3a4:	0f 92       	push	r0
+ 3a6:	11 24       	eor	r1, r1
+ 3a8:	2f 93       	push	r18
+ 3aa:	3f 93       	push	r19
+ 3ac:	4f 93       	push	r20
+ 3ae:	5f 93       	push	r21
+ 3b0:	6f 93       	push	r22
+ 3b2:	7f 93       	push	r23
+ 3b4:	8f 93       	push	r24
+ 3b6:	9f 93       	push	r25
+ 3b8:	af 93       	push	r26
+ 3ba:	bf 93       	push	r27
+ 3bc:	ef 93       	push	r30
+ 3be:	ff 93       	push	r31
+ 3c0:	cf 93       	push	r28
+ 3c2:	df 93       	push	r29
+ 3c4:	00 d0       	rcall	.+0      	; 0x3c6 <__vector_9+0x28>
+ 3c6:	cd b7       	in	r28, 0x3d	; 61
+ 3c8:	de b7       	in	r29, 0x3e	; 62
+	int ledValue = getLedValue(ledNum, settingTimeFlag);
+ 3ca:	60 91 64 00 	lds	r22, 0x0064	; 0x800064 <__data_end>
+ 3ce:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <ledNum>
+ 3d2:	90 91 68 00 	lds	r25, 0x0068	; 0x800068 <ledNum+0x1>
+ 3d6:	05 df       	rcall	.-502    	; 0x1e2 <getLedValue>
+ 3d8:	9a 83       	std	Y+2, r25	; 0x02
+ 3da:	89 83       	std	Y+1, r24	; 0x01
+	switchDigit(&ledNum, &ledValue);//смена отображаемого регистра дисплея и запись значения в него
+ 3dc:	be 01       	movw	r22, r28
+ 3de:	6f 5f       	subi	r22, 0xFF	; 255
+ 3e0:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3e2:	87 e6       	ldi	r24, 0x67	; 103
+ 3e4:	90 e0       	ldi	r25, 0x00	; 0
+ 3e6:	89 df       	rcall	.-238    	; 0x2fa <switchDigit>
+	ledNum++;
+ 3e8:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <ledNum>
+ 3ec:	90 91 68 00 	lds	r25, 0x0068	; 0x800068 <ledNum+0x1>
+ 3f0:	01 96       	adiw	r24, 0x01	; 1
+	if(ledNum == 6) ledNum = 0;	
+ 3f2:	86 30       	cpi	r24, 0x06	; 6
+ 3f4:	91 05       	cpc	r25, r1
+ 3f6:	29 f0       	breq	.+10     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+	uptClockVars(&seconds, &minutes, &hours); //перевод стрелок
+}
+ISR(TIMER0_OVF_vect){ // прерывание по смене отображаемого регистра и установка значения в него
+	int ledValue = getLedValue(ledNum, settingTimeFlag);
+	switchDigit(&ledNum, &ledValue);//смена отображаемого регистра дисплея и запись значения в него
+	ledNum++;
+ 3f8:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <ledNum+0x1>
+ 3fc:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <ledNum>
+ 400:	04 c0       	rjmp	.+8      	; 0x40a <__LOCK_REGION_LENGTH__+0xa>
+	if(ledNum == 6) ledNum = 0;	
+ 402:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <ledNum+0x1>
+ 406:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <ledNum>
+}
+ 40a:	0f 90       	pop	r0
+ 40c:	0f 90       	pop	r0
+ 40e:	df 91       	pop	r29
+ 410:	cf 91       	pop	r28
+ 412:	ff 91       	pop	r31
+ 414:	ef 91       	pop	r30
+ 416:	bf 91       	pop	r27
+ 418:	af 91       	pop	r26
+ 41a:	9f 91       	pop	r25
+ 41c:	8f 91       	pop	r24
+ 41e:	7f 91       	pop	r23
+ 420:	6f 91       	pop	r22
+ 422:	5f 91       	pop	r21
+ 424:	4f 91       	pop	r20
+ 426:	3f 91       	pop	r19
+ 428:	2f 91       	pop	r18
+ 42a:	0f 90       	pop	r0
+ 42c:	0f be       	out	0x3f, r0	; 63
+ 42e:	0f 90       	pop	r0
+ 430:	1f 90       	pop	r1
+ 432:	18 95       	reti
+
+00000434 <__vector_1>:
+
+ISR(INT0_vect){
+ 434:	1f 92       	push	r1
+ 436:	0f 92       	push	r0
+ 438:	0f b6       	in	r0, 0x3f	; 63
+ 43a:	0f 92       	push	r0
+ 43c:	11 24       	eor	r1, r1
+
+}				
+ 43e:	0f 90       	pop	r0
+ 440:	0f be       	out	0x3f, r0	; 63
+ 442:	0f 90       	pop	r0
+ 444:	1f 90       	pop	r1
+ 446:	18 95       	reti
+
+00000448 <__vector_2>:
+ISR(INT1_vect){
+ 448:	1f 92       	push	r1
+ 44a:	0f 92       	push	r0
+ 44c:	0f b6       	in	r0, 0x3f	; 63
+ 44e:	0f 92       	push	r0
+ 450:	11 24       	eor	r1, r1
+ 452:	2f 93       	push	r18
+ 454:	3f 93       	push	r19
+ 456:	4f 93       	push	r20
+ 458:	5f 93       	push	r21
+ 45a:	6f 93       	push	r22
+ 45c:	7f 93       	push	r23
+ 45e:	8f 93       	push	r24
+ 460:	9f 93       	push	r25
+ 462:	af 93       	push	r26
+ 464:	bf 93       	push	r27
+ 466:	ef 93       	push	r30
+ 468:	ff 93       	push	r31
+	timer1IntDisable();
+ 46a:	24 de       	rcall	.-952    	; 0xb4 <timer1IntDisable>
+}			
+ 46c:	ff 91       	pop	r31
+ 46e:	ef 91       	pop	r30
+ 470:	bf 91       	pop	r27
+ 472:	af 91       	pop	r26
+ 474:	9f 91       	pop	r25
+ 476:	8f 91       	pop	r24
+ 478:	7f 91       	pop	r23
+ 47a:	6f 91       	pop	r22
+ 47c:	5f 91       	pop	r21
+ 47e:	4f 91       	pop	r20
+ 480:	3f 91       	pop	r19
+ 482:	2f 91       	pop	r18
+ 484:	0f 90       	pop	r0
+ 486:	0f be       	out	0x3f, r0	; 63
+ 488:	0f 90       	pop	r0
+ 48a:	1f 90       	pop	r1
+ 48c:	18 95       	reti
+
+0000048e <main>:
+int main(void){
+	//int test = 0;
+	sei(); //interrupts are enable
+ 48e:	78 94       	sei
+	counterSettings();
+ 490:	fd dd       	rcall	.-1030   	; 0x8c <counterSettings>
+	ledPortSEtting();
+ 492:	14 de       	rcall	.-984    	; 0xbc <ledPortSEtting>
+	timer1IntEnable();
+ 494:	0b de       	rcall	.-1002   	; 0xac <timer1IntEnable>
+	extInteruptSettings();
+ 496:	ed dd       	rcall	.-1062   	; 0x72 <extInteruptSettings>
+	//extIntINT0Enable();
+	extIntINT1Enable();
+ 498:	f5 dd       	rcall	.-1046   	; 0x84 <extIntINT1Enable>
+    while (1){
+		if(!(PIND&(1<<PD2)))setNewTime();
+ 49a:	82 99       	sbic	0x10, 2	; 16
+ 49c:	fe cf       	rjmp	.-4      	; 0x49a <main+0xc>
+ 49e:	1a de       	rcall	.-972    	; 0xd4 <setNewTime>
+ 4a0:	fc cf       	rjmp	.-8      	; 0x49a <main+0xc>
+
+000004a2 <__divmodhi4>:
+ 4a2:	97 fb       	bst	r25, 7
+ 4a4:	07 2e       	mov	r0, r23
+ 4a6:	16 f4       	brtc	.+4      	; 0x4ac <__divmodhi4+0xa>
+ 4a8:	00 94       	com	r0
+ 4aa:	06 d0       	rcall	.+12     	; 0x4b8 <__divmodhi4_neg1>
+ 4ac:	77 fd       	sbrc	r23, 7
+ 4ae:	08 d0       	rcall	.+16     	; 0x4c0 <__divmodhi4_neg2>
+ 4b0:	0b d0       	rcall	.+22     	; 0x4c8 <__udivmodhi4>
+ 4b2:	07 fc       	sbrc	r0, 7
+ 4b4:	05 d0       	rcall	.+10     	; 0x4c0 <__divmodhi4_neg2>
+ 4b6:	3e f4       	brtc	.+14     	; 0x4c6 <__divmodhi4_exit>
+
+000004b8 <__divmodhi4_neg1>:
+ 4b8:	90 95       	com	r25
+ 4ba:	81 95       	neg	r24
+ 4bc:	9f 4f       	sbci	r25, 0xFF	; 255
+ 4be:	08 95       	ret
+
+000004c0 <__divmodhi4_neg2>:
+ 4c0:	70 95       	com	r23
+ 4c2:	61 95       	neg	r22
+ 4c4:	7f 4f       	sbci	r23, 0xFF	; 255
+
+000004c6 <__divmodhi4_exit>:
+ 4c6:	08 95       	ret
+
+000004c8 <__udivmodhi4>:
+ 4c8:	aa 1b       	sub	r26, r26
+ 4ca:	bb 1b       	sub	r27, r27
+ 4cc:	51 e1       	ldi	r21, 0x11	; 17
+ 4ce:	07 c0       	rjmp	.+14     	; 0x4de <__udivmodhi4_ep>
+
+000004d0 <__udivmodhi4_loop>:
+ 4d0:	aa 1f       	adc	r26, r26
+ 4d2:	bb 1f       	adc	r27, r27
+ 4d4:	a6 17       	cp	r26, r22
+ 4d6:	b7 07       	cpc	r27, r23
+ 4d8:	10 f0       	brcs	.+4      	; 0x4de <__udivmodhi4_ep>
+ 4da:	a6 1b       	sub	r26, r22
+ 4dc:	b7 0b       	sbc	r27, r23
+
+000004de <__udivmodhi4_ep>:
+ 4de:	88 1f       	adc	r24, r24
+ 4e0:	99 1f       	adc	r25, r25
+ 4e2:	5a 95       	dec	r21
+ 4e4:	a9 f7       	brne	.-22     	; 0x4d0 <__udivmodhi4_loop>
+ 4e6:	80 95       	com	r24
+ 4e8:	90 95       	com	r25
+ 4ea:	bc 01       	movw	r22, r24
+ 4ec:	cd 01       	movw	r24, r26
+ 4ee:	08 95       	ret
+
+000004f0 <_exit>:
+ 4f0:	f8 94       	cli
+
+000004f2 <__stop_program>:
+ 4f2:	ff cf       	rjmp	.-2      	; 0x4f2 <__stop_program>
