@@ -29,6 +29,12 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8/avr4/crtatmega8.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8/avr4/crtatmega8.o
+ .text          0x00000000        0x0 src/7LedDisplay.o
+ .data          0x00000000        0x0 src/7LedDisplay.o
+ .bss           0x00000000        0x0 src/7LedDisplay.o
+ .debug_line    0x00000000        0x0 src/7LedDisplay.o
+ .debug_str     0x00000000       0xfa src/7LedDisplay.o
+ .comment       0x00000000       0x31 src/7LedDisplay.o
  .text          0x00000000        0x0 src/gpio_pins.o
  .data          0x00000000        0x0 src/gpio_pins.o
  .bss           0x00000000        0x0 src/gpio_pins.o
@@ -158,6 +164,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8/avr4/crtatmega8.o
+LOAD src/7LedDisplay.o
 LOAD src/gpio_pins.o
 LOAD src/main.o
 START GROUP
@@ -546,10 +553,10 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x934
+.debug_info     0x00000000      0x93b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x48c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8/avr4/crtatmega8.o
- .debug_info    0x0000048c      0x4a8 src/main.o
+ .debug_info    0x0000048c      0x4af src/main.o
 
 .debug_abbrev   0x00000000      0x61a
  *(.debug_abbrev)
@@ -565,11 +572,11 @@ END GROUP
  *(.debug_frame)
  .debug_frame   0x00000000      0x244 src/main.o
 
-.debug_str      0x00000000      0x479
+.debug_str      0x00000000      0x47a
  *(.debug_str)
  .debug_str     0x00000000      0x17a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8/avr4/crtatmega8.o
- .debug_str     0x0000017a      0x2ff src/main.o
-                                0x338 (size before relaxing)
+ .debug_str     0x0000017a      0x300 src/main.o
+                                0x339 (size before relaxing)
 
 .debug_loc      0x00000000      0x827
  *(.debug_loc)

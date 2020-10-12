@@ -40,6 +40,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../src/7LedDisplay.c \
 ../src/gpio_pins.c \
 ../src/main.c
 
@@ -51,18 +52,22 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+src/7LedDisplay.o \
 src/gpio_pins.o \
 src/main.o
 
 OBJS_AS_ARGS +=  \
+src/7LedDisplay.o \
 src/gpio_pins.o \
 src/main.o
 
 C_DEPS +=  \
+src/7LedDisplay.d \
 src/gpio_pins.d \
 src/main.d
 
 C_DEPS_AS_ARGS +=  \
+src/7LedDisplay.d \
 src/gpio_pins.d \
 src/main.d
 
@@ -80,6 +85,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+src/7LedDisplay.o: ../src/7LedDisplay.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega8 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega8" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 src/gpio_pins.o: ../src/gpio_pins.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0

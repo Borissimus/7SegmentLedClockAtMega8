@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include "../inc/main.h"
 #include "../inc/gpio_pins.h"
+#include "../inc/7LedDisplay.h"
 
 //define 7 LED variables
 #define CHAR_0 32 // mask 0b00100000

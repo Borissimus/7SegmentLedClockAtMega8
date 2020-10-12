@@ -14,7 +14,8 @@ src/main.d src/main.o: ../src/main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../src/../inc/main.h ../src/../inc/gpio_pins.h
+ ../src/../inc/main.h ../src/../inc/gpio_pins.h \
+ ../src/../inc/7LedDisplay.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -49,3 +50,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../src/../inc/main.h:
 
 ../src/../inc/gpio_pins.h:
+
+../src/../inc/7LedDisplay.h:

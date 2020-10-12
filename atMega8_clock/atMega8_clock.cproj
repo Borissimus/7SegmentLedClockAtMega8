@@ -133,10 +133,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="inc\7LedDisplay.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="inc\gpio_pins.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="inc\main.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\7LedDisplay.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\gpio_pins.c">
