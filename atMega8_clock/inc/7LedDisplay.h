@@ -20,10 +20,11 @@ typedef struct DigitPointerPort {
 typedef struct Led7SegDispProto Display;
 
 typedef struct Led7SegDispProto {
-	uint8_t CurDigit;
-	uint8_t NumOfDigits; 
-	uint8_t Digit[NUM_OF_DIGITS];
-	DigitPointerPort DigitPointer; 
-	void(*setCurrDigit)(Display *disp);
+	uint8_t CurDispObj;                  // 1 - current time, 0 - time setup
+	uint8_t CurDigit;                    // currently displayed digit
+	uint8_t NumOfDigits;                 // must be assigned to NUM_OF_DIGITS  
+	uint8_t Digit[NUM_OF_DIGITS];        // display of digits array 
+	DigitPointerPort DigitPointer;       // 
+	void(*setCurrDigit)(Display *disp);  // 
 	pin double_point;
 } Display;
