@@ -7,7 +7,7 @@
 #ifndef _7LEDDISPLAY_H_
 #define _7LEDDISPLAY_H_
 #endif /* 7LEDDISPLAY_H_ */
-// User includs
+// User includes
 #include <stdint.h>
 
 // User defines
@@ -26,6 +26,10 @@ typedef struct DigitPointerPort {
 	uint8_t StatrPinNum;
 } DigitPointerPort;
 
+typedef struct Led7SegDispConfig {
+	
+} Led7SegDispConfig;
+
 // Pre define Display prototype 
 typedef struct Led7SegDispProto Display;
 
@@ -37,4 +41,5 @@ typedef struct Led7SegDispProto {
 	DigitPointerPort *CurrDigitPointer;  // struct used for setup cur. digit displaying and definition
 	void(*SwitchDigit)(Display *disp);   // Update displayed digit by modifying *CurrDigitPointer 
 	pin double_point;                    // seconds marker - double point (pin object)
+	Led7SegDispConfig config;
 } Display;
