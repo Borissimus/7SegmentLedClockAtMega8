@@ -15,8 +15,7 @@
 #define PIN_AS_INPUT 2
 #define PIN_AS_PULLED_IN 3
 
-typedef struct PinProto
-{
+typedef struct PinProto {
 	volatile uint8_t *port;
 	volatile uint8_t *port_dir;
 	volatile uint8_t *pin_reg;

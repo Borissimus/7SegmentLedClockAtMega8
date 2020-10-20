@@ -58,7 +58,7 @@ Discarded input sections
                 0x00000000       0x50 src/gpio_pins.o
  .debug_ranges  0x00000000       0x40 src/gpio_pins.o
  .debug_line    0x00000000      0x1c7 src/gpio_pins.o
- .debug_str     0x00000000      0x240 src/gpio_pins.o
+ .debug_str     0x00000000      0x238 src/gpio_pins.o
  .comment       0x00000000       0x31 src/gpio_pins.o
  .debug_frame   0x00000000       0x8c src/gpio_pins.o
  COMMON         0x00000000       0x14 src/gpio_pins.o
