@@ -30,14 +30,14 @@
 typedef union Led7SegDigitProto {
 	uint8_t dec_val;
 	struct bit_val {
-		uint8_t A  : 1;  // 
-		uint8_t B  : 1;	 //
-		uint8_t C  : 1;	 //
-		uint8_t D  : 1;	 //
-		uint8_t E  : 1;	 //
-		uint8_t F  : 1;	 //
-		uint8_t G  : 1;	 //
-		uint8_t DP : 1;	 //
+		uint8_t A  : 1;  // PIN0 of DIGIT_DATA_PORT
+		uint8_t B  : 1;	 //	PIN1 of DIGIT_DATA_PORT
+		uint8_t C  : 1;	 //	PIN2 of DIGIT_DATA_PORT
+		uint8_t D  : 1;	 //	PIN3 of DIGIT_DATA_PORT
+		uint8_t E  : 1;	 //	PIN4 of DIGIT_DATA_PORT
+		uint8_t F  : 1;	 //	PIN5 of DIGIT_DATA_PORT
+		uint8_t G  : 1;	 //	PIN6 of DIGIT_DATA_PORT
+		uint8_t DP : 1;	 //	PIN7 of DIGIT_DATA_PORT
 	};
 } Led7SegDigitProto;
 // current LED (Digit) selector port definition
