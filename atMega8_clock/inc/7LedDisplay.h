@@ -42,24 +42,23 @@ typedef union Led7SegDigitProto {
 } Led7SegDigitProto;
 // current LED (Digit) selector port definition
 // display selector pins must be continuously set from any port (PINB1 - PINB6 for example) 
-typedef struct DigitPointerPort {
-	volatile uint8_t *port;
-	volatile uint8_t *port_dir;
-	uint8_t curr_digit_num;                // currently displaying digit number
+typedef struct DisplayDigitPointer {
 	volatile uint8_t active_digit_mask[NUM_OF_DIGITS];
 	volatile uint8_t mask;
 	volatile uint8_t inv_mask;
-	uint8_t start_pin_num;
-	uint8_t end_pin_num;
-} DigitPointerPort;
-
-typedef struct DigitDataPort {
 	volatile uint8_t *port;
 	volatile uint8_t *port_dir;
-	Led7SegDigitProto digit[NUM_OF_DIGITS];  // display of digits array (display current data)
+	uint8_t start_pin_num;
+	uint8_t end_pin_num;
+} DisplayDigitPointer;
+
+typedef struct DisplayDigitsData {
+	Led7SegDigitProto Data[NUM_OF_DIGITS];  // display of digits array (display current data)
 	volatile uint8_t mask;
 	volatile uint8_t inv_mask;
-} DigitDataPort;
+	volatile uint8_t *port;
+	volatile uint8_t *port_dir;
+} DisplayDigitsData;
 
 typedef struct Led7SegDispConfig {
    
@@ -69,10 +68,13 @@ typedef struct Led7SegDispConfig {
 typedef struct Led7SegDispProto Display;
 
 typedef struct Led7SegDispProto {
+	uint8_t curr_digit_num;                // currently displaying digit number
+	DisplayDigitPointer DigitPointer;       // struct used for setup cur. digit displaying and definition
 	uint8_t disp_type;
 	uint8_t curr_src_data;              // disp. src selector GLOBAL_TIME or SETTING_TIME
 	uint8_t num_of_digits;                 // must be assigned to NUM_OF_DIGITS   
-	DigitPointerPort DigitPointer;       // struct used for setup cur. digit displaying and definition
+	
+	DisplayDigitsData Digits;
 	void(*SwitchDigit)(Display *disp);   // Update displayed digit by modifying *CurrDigitPointer 
 	
 	pin double_point;                    // seconds marker - double point (pin object)
